@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+car_collection
+__pycache__
+.vscode
+.env
+.json
+.csv

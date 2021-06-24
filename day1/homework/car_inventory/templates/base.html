@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Description" content="Enter your description here"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="../static/css/main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+        <title>Car Inventory</title>
+    </head>
+    <body>
+        <nav class="ct-nav">
+            <div>
+                <img src="../static/images/car.png" alt="Car Company Logo">
+            </div>
+            <div>
+                <ul id="horizontal-list">
+                    <a href="{{ url_for('site.index') }}">
+                        <li>Car Inventory Home</li>
+                    </a>
+                    <a href="">
+                        <li>Donate</li>
+                    </a>
+                    <a href="{{ url_for('site.profile') }}">
+                        <li>Profile</li>
+                    </a>
+                    {% if current_user.isauthenticated %}
+                    <a href="{{ url_for('auth.logout') }}">
+                        <li>Log Out</li>
+                    </a>
+                    {% else %}
+                    <a href="{{ url_for('auth.signin') }}">
+                        <li>Sign In</li>
+                    </a>
+                    <a href="{{ url_for('auth.signup') }}">
+                        <li>Sign Up Free</li>
+                    </a>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock content %}
+        <div class="container">
+            <footer class="row" id="footer">
+                <div class="col-2 col-md-2">
+                    <img src="../../static/images/car.svg" alt="Car Company Logo" id="footer-logo">
+                </div>
+                <div class="col-2 col-md-2">
+                    <div class="footer-text-flex">
+                        <h4>Platform</h4>
+                        <p>Why cars?</p>
+                        <p>Car Inventory Link</p>
+                        <p>Donate</p>
+                        <p>Spread a Disease</p>
+                        <p>Our Process</p>
+                    </div>
+                </div>
+                <div class="col-2 col-md-2">
+                    <div class="footer-text-flex">
+                        <h4>Platform</h4>
+                        <p>Dabble in illegal finances</p>
+                        <p>Fake your death</p>
+                        <p>Move across the world</p>
+                        <p>????</p>
+                        <p>Profit</p>
+                    </div>
+                </div>
+                <div class="col-2 col-md-2">
+                    <div class="footer-text-flex">
+                        <h4>Platform</h4>
+                        <p>a Haiku</p>
+                        <p>spaghetti</p>
+                        <p>Italian food</p>
+                        <p>mac and cheese</p>
+                        <p>... so beautiful</p>
+                    </div>
+                </div>
+                <div class="col-2 col-md-2">
+                    <div class="footer-text-flex">
+                        <h4>Platform</h4>
+                        <p>Car stuff</p>
+                        <p>The Car Project</p>
+                        <p>Invest and not get anything back</p>
+                        <p>Spread The Mayo</p>
+                        <p>Our Process</p>
+                    </div>
+                </div>
+                <div class="col-2 col-md-2">
+                    <div class="footer-text-flex">
+                        <h4>Platform</h4>
+                        <p>Car stuff</p>
+                        <p>The Car Project</p>
+                        <p>Invest and not get anything back</p>
+                        <p>Spread The Mayo</p>
+                        <p>Our Process</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
